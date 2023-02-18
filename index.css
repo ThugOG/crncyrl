@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Space+Grotesk:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Oswald";
+}
+.navbar {
+    display: flex;
+    background-color: #23252b;
+    color: white;
+    /* border: 1px solid b; */
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+}
+.left-side-navbar{
+    display: flex; 
+    gap: 20px;  
+}
+.left-btn{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* border: 1px solid red; */
+}
+.right-side-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-btn{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* border: 1px solid red; */
+}
+.search-icon{
+    border-radius: 40%;
+    background-color: transparent;
+    filter: invert();
+    border: none;
+
+}
+.anime-image{
+    height: 250px;
+    width: 200px;
+}
+.main-page-body{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+}
+.single-anime-card{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    gap: 10px;
+    width: 250px;
+    padding: 25px;
+    color: white;
+    transition: all 0.7s solid;
+}
+.single-anime-card:hover{
+    background-color:rgb(41, 40, 40) ;
+}
+.shimmer-page-body{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+}
+.shimmer-single-anime-card {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    gap: 10px;
+    width: 250px;
+    padding: 25px;
+}
+.shimmer-single-anime-card > p{
+    height: 20px;
+    width: 100px;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    animation: placeholderShimmer 2s linear forwards infinite;
+}
+.shimmer-anime-image{
+    height: 250px;
+    width: 200px;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    animation: placeholderShimmer 2s linear forwards infinite;
+}
+@keyframes placeholderShimmer {
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}
+.fav-btn{
+    /* background-color: rgb(0, 195, 255); */
+    font-weight: bold;
+    /* color: white; */
+    font-family: "Space Grotesk";
+    height: 30px;
+    border: none;
+}
+.fav-tab{
+    display: flex;
+    gap: 5px;
+}

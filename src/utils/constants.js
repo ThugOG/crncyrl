@@ -1,0 +1,1 @@
+export const NAV_LOGO = "https://i.ibb.co/ZM21gBV/Crunchyroll-Emblem.png"

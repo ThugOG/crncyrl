@@ -1,0 +1,22 @@
+{
+  "name": "animeflix",
+  "version": "1.0.0",
+  "description": "Anime App",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.2",
+    "parcel": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "process": "^0.11.10"
+  }
+}
