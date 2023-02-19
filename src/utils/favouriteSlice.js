@@ -9,11 +9,14 @@ const favouriteSlice = createSlice({
         addFavourite: (state, action)=>{
             state.favs.push(action.payload)
         },
+        removeSelection: (state, action)=>{
+            delete state.favs[action.payload]
+        },
         clearFavourite: (state)=>{
             state.favs = []
         }
     }
 })
 
-export const {addFavourite, clearFavourite} = favouriteSlice.actions;
+export const {addFavourite, removeSelection, clearFavourite} = favouriteSlice.actions;
 export default favouriteSlice.reducer

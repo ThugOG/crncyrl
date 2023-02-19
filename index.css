@@ -1,23 +1,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Space+Grotesk:wght@500&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Oswald";
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
 .navbar {
     display: flex;
     background-color: #23252b;
     color: white;
+    width: 100%;
     /* border: 1px solid b; */
     justify-content: space-between;
     padding: 0px 20px 0px 20px;
 }
-.left-side-navbar{
-    display: flex; 
-    gap: 20px;  
+
+.left-side-navbar {
+    display: flex;
+    gap: 20px;
 }
-.left-btn{
+
+.left-btn {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: white
+        /* border: 1px solid red; */
+}
+
+.heading-links {
+    text-decoration: none;
+    color: white
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #23252b;
+    padding: 30px;
+    height: 300px;
+    width: 70vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    font-family: "Space Grotesk";
+  }
+  .dropdown:hover .dropdown-content {display: flex;}
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #333333;}
+  
+  
+  .dd-right-side{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 200px;
+    justify-content: flex-start;
+    align-items: start;
+  }
+  .dd-left-side{
+    border-right: 1px solid grey;
+  }
+  .dd-right-side > a{
+    height: 30px;
+    width: 200px;
+    padding: 10px;
+  }
+.right-side-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-btn {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -26,39 +121,53 @@
     gap: 30px;
     /* border: 1px solid red; */
 }
-.right-side-navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.right-btn>ul>a {
+    text-decoration: none;
 }
-.right-btn{
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    /* border: 1px solid red; */
-}
-.search-icon{
+
+.search-icon {
     border-radius: 40%;
     background-color: transparent;
     filter: invert();
     border: none;
 
 }
-.anime-image{
+
+.search-icon:hover {
+    border: 1px solid black;
+}
+
+.search-box {
+    padding-left: 10px;
+    background-color: transparent;
+    border: 2px solid grey;
+    height: 30px;
+    width: 190px;
+    border-radius: 10px;
+    color: white;
+    font-family: "Space Grotesk";
+}
+
+.search-box:hover {
+    border: 2px solid white;
+}
+
+.anime-image {
     height: 250px;
     width: 200px;
 }
-.main-page-body{
+
+.main-page-body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 20px;
     background-color: black;
+    padding: 20px;
 }
-.single-anime-card{
+
+.single-anime-card {
     display: flex;
     flex-direction: column;
     /* border: 1px solid red; */
@@ -69,16 +178,19 @@
     color: white;
     transition: all 0.7s solid;
 }
-.single-anime-card:hover{
-    background-color:rgb(41, 40, 40) ;
+
+.single-anime-card:hover {
+    background-color: rgb(41, 40, 40);
 }
-.shimmer-page-body{
+
+.shimmer-page-body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 20px;
     background-color: black;
 }
+
 .shimmer-single-anime-card {
     display: flex;
     flex-direction: column;
@@ -87,18 +199,21 @@
     width: 250px;
     padding: 25px;
 }
-.shimmer-single-anime-card > p{
+
+.shimmer-single-anime-card>p {
     height: 20px;
     width: 100px;
     background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
     animation: placeholderShimmer 2s linear forwards infinite;
 }
-.shimmer-anime-image{
+
+.shimmer-anime-image {
     height: 250px;
     width: 200px;
     background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
     animation: placeholderShimmer 2s linear forwards infinite;
 }
+
 @keyframes placeholderShimmer {
     0% {
         background-position: -468px 0;
@@ -108,15 +223,229 @@
         background-position: 468px 0;
     }
 }
-.fav-btn{
+
+.fav-btn {
     /* background-color: rgb(0, 195, 255); */
     font-weight: bold;
     /* color: white; */
     font-family: "Space Grotesk";
     height: 30px;
     border: none;
+    transition: all 0.4s ease
 }
-.fav-tab{
+
+.fav-btn:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+.fav-tab {
     display: flex;
     gap: 5px;
+    color: white;
+}
+
+.footer {
+    border-top: 2px solid whitesmoke;
+    height: 90px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav-tab-body {
+    display: flex;
+    min-height: 100vh;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.fav-tab-heading {
+    display: flex;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.fav-tab-card {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    /* gap: 10px; */
+    width: 250px;
+    padding: 25px;
+    height: 500px;
+    color: white;
+    transition: all 0.7s solid;
+}
+
+.fav-tab-card:hover {
+    background-color: rgb(41, 40, 40);
+}
+
+.fav-clear-btn {
+    width: 70px;
+    height: 20px;
+    background-color: white;
+    font-family: "Space Grotesk";
+    font-weight: bold;
+    border: none;
+    transition: all 0.4s ease;
+}
+
+.fav-clear-btn:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.detail-main-body {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.upper-detail-part {
+    display: flex;
+    gap: 40px;
+}
+
+.upper-detail-part>img {
+    height: 400px;
+}
+
+.anime-details-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.anime-details-right>h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.anime-details-right>p {
+    opacity: 0.6;
+    font-size: large;
+}
+
+.anime-details-right>button {
+    margin-top: 10px;
+    background-color: white;
+    border: none;
+    height: 30px;
+    width: 150px;
+    font-size: 19px;
+    transition: all 0.6s ease;
+}
+
+.anime-details-right>button:hover {
+    background-color: grey;
+}
+
+.lower-detail-part {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+    font-size: 19px;
+    opacity: 0.7;
+    /* width: 70vw; */
+}
+
+.episodes-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.episode-card {
+    border: 2px solid white;
+    padding: 20px;
+}
+
+.episode-card>span>a {
+    text-decoration: none;
+    color: grey
+}
+
+.episode-heading {
+    margin-bottom: 20px;
+}
+
+.search-comp {
+    /* min-height: 100vh; */
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.search-comp>input {
+    border: none;
+    height: 60px;
+    width: 80vw;
+    background-color: transparent;
+    border-bottom: 1px solid grey;
+    font-size: 20px;
+    color: White;
+    padding: 20px;
+}
+
+.search-comp>input:hover {
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.search-page-body {
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.search-card {
+    color: white;
+    height: 390px;
+    width: 250px;
+    /* border: 1px solid grey; */
+    padding: 25px;
+}
+
+.search-card:hover {
+    background-color: rgb(54, 54, 54)
+}
+
+.search-card>img {
+    height: 250px;
+    width: 200px;
+}
+
+.search-card>a>button {
+    height: 30px;
+    width: 100px;
+    background-color: white;
+    border: none;
+    font-family: "Space Grotesk";
+    transition: all 0.6s ease;
+}
+.search-card>a>button:hover{
+    background-color: grey;
+    cursor: pointer;
 }

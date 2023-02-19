@@ -1,11 +1,7 @@
 import { useDispatch } from "react-redux";
 import { addFavourite } from "../utils/favouriteSlice";
-const AnimeCard = ({ animeTitle, animeImg, releasedDate }) => {
-  const dispatch = useDispatch();
-
-  const handleFavlist = () => {
-    dispatch(addFavourite({ animeTitle, animeImg, releasedDate }));
-  };
+import {Link } from 'react-router-dom'
+const AnimeCard = ({animeId, animeTitle, animeImg, releasedDate }) => {
   return (
     <div className="single-anime-card">
       <div>
@@ -13,9 +9,9 @@ const AnimeCard = ({ animeTitle, animeImg, releasedDate }) => {
         <p>{animeTitle}</p>
         <p>Released Date: {releasedDate}</p>
       </div>
-      <button className="fav-btn" onClick={handleFavlist}>
-        Add to Favourite
-      </button>
+      <Link to={"/getDetails/"+animeId}><button className="fav-btn">
+        Know More
+      </button></Link>
     </div>
   );
 };
