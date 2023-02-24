@@ -27,23 +27,23 @@ const Header = () => {
               <button class="dropbtn">Browse</button>
               <div class="dropdown-content">
                 <div className="dd-left-side">
-                  <Link to="#">Popular</Link>
-                  <Link to="#">New</Link>
-                  <Link to="#">Alphabetical</Link>
-                  <Link to="#">Simulcast Season</Link>
-                  <Link to="#">Release Calendar</Link>
+                  <Link to="/browse/popular">Popular</Link>
+                  <Link to="/browse/new">New</Link>
+                  <Link to="/browse/alphabetical">Alphabetical</Link>
+                  <Link to="/browse/simulcast-season">Simulcast Season</Link>
+                  <Link to="/browse/release-calendar">Release Calendar</Link>
                 </div>
                 <div className="dd-right-side">
-                  <Link to="#">Action</Link>
-                  <Link to="#">Adventure</Link>
-                  <Link to="#">Comedy</Link>
-                  <Link to="#">Drama</Link>
-                  <Link to="#">Fantasy</Link>
-                  <Link to="#">Music</Link>
-                  <Link to="#">Romance</Link>
-                  <Link to="#">Sci-Fi</Link>
-                  <Link to="#">Shojo</Link>
-                  <Link to="#">Sports</Link>
+                  <Link to="/genre/action">Action</Link>
+                  <Link to="/genre/adventure">Adventure</Link>
+                  <Link to="/genre/comedy">Comedy</Link>
+                  <Link to="/genre/drama">Drama</Link>
+                  <Link to="/genre/fantasy">Fantasy</Link>
+                  <Link to="/genre/martial-arts">Fighting</Link>
+                  <Link to="/genre/romance">Romance</Link>
+                  <Link to="/genre/sci-fi">Sci-Fi</Link>
+                  <Link to="/genre/shoujo">Shoujo</Link>
+                  <Link to="/genre/sports">Sports</Link>
                 </div>
               </div>
             </div>

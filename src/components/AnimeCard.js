@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux";
-import { addFavourite } from "../utils/favouriteSlice";
 import {Link } from 'react-router-dom'
 const AnimeCard = ({animeId, animeTitle, animeImg, releasedDate }) => {
   return (

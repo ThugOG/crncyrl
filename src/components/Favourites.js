@@ -13,11 +13,11 @@ const Favourites = () => {
         <h1>WishList: </h1>
         {favItems.map((singleItem) => (
           <div className="fav-tab-card">
-            <img src={singleItem.animeImg}></img>
-            <p>{singleItem.animeTitle}</p>
-            <p>Released Date: {singleItem.releasedDate}</p>
-            <p>Status: {singleItem.status}</p>
-            <p>Total Episodes: {singleItem.totalEpisodes}</p>
+            <img src={singleItem?.animeImg}></img>
+            <p>{singleItem?.animeTitle}</p>
+            <p>Released Date: {singleItem?.releasedDate}</p>
+            <p>Status: {singleItem?.status}</p>
+            <p>Total Episodes: {singleItem?.totalEpisodes}</p>
             <button onClick={handleClearSelection} className="fav-clear-btn">
               Clear
             </button>

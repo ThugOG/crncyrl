@@ -91,6 +91,7 @@ body {
   
   .dd-right-side{
     display: flex;
+    /* border: 1px solid red; */
     flex-direction: row;
     flex-wrap: wrap;
     width: 400px;

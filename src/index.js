@@ -2,11 +2,12 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import Body from "./components/Body";
-// import Favourites from "./components/Favourites";
 import DetailPage from "./components/DetailPage";
 import  Search  from "./components/Search";
+import Browse from "./components/Browse";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const Favourites = lazy(()=> import("./components/Favourites"))
+const Genre = lazy(()=>import("./components/Genre"))
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <Search />
+      },
+      {
+        path: "/browse/:type",
+        element: <Browse />
+      },
+      {
+        path: "/genre/:type",
+        element: <Suspense><Genre /></Suspense>
       },
     ],
   },
