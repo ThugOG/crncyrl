@@ -1,5 +1,12 @@
-import {Link } from 'react-router-dom'
-const AnimeCard = ({animeId, animeTitle, animeImg, releasedDate }) => {
+import { Link } from "react-router-dom";
+import { addFavourite } from "../utils/favouriteSlice";
+import { useDispatch } from "react-redux";
+const AnimeCard = ({ animeId, animeTitle, animeImg, releasedDate }) => {
+  const dispatch = useDispatch();
+  const handlefav = () => {
+    dispatch(addFavourite({ animeId, animeTitle, animeImg, releasedDate }))
+  }
+
   return (
     <div className="single-anime-card">
       <div>
@@ -7,9 +14,17 @@ const AnimeCard = ({animeId, animeTitle, animeImg, releasedDate }) => {
         <p>{animeTitle}</p>
         <p>Released Date: {releasedDate}</p>
       </div>
-      <Link to={"/getDetails/"+animeId}><button className="fav-btn">
-        Know More
-      </button></Link>
+      {/* <div className="card-btn"> */}
+        <Link to={"/getDetails/" + animeId}>
+          <button className="fav-btn">Know More</button>
+        </Link>
+        {/* <button onClick={handlefav} className="fav-btn-card">
+          <img
+            className="fav-btn-card"
+            src="https://img.icons8.com/emoji/25/null/heart-suit.png"
+          />
+        </button> */}
+      {/* </div> */}
     </div>
   );
 };

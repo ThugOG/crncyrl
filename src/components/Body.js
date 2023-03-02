@@ -13,9 +13,21 @@ const Body = () => {
   const show = () => {
     console.log(recentRelease);
   };
+  const handleInfiniteScroll = async() =>{
+    // console.log("ScrollHeight" + document.documentElement.scrollHeight);
+    try{
+
+    }
+    catch(e){
+        console.log(error);
+    }
+  }
   useEffect(() => {
     getAnimeData();
   }, []);
+  useEffect(()=>{
+    window.addEventListener('scroll', handleInfiniteScroll)
+  },[])
   return (
     <>
         <Carousel />

@@ -40,12 +40,12 @@ const DetailPage = () => {
       <div className="lower-detail-part">{animeDetails?.synopsis}</div>
       <h2 className="episode-heading">Episodes Based on Recency : </h2>
       <div className="episodes-body">
-            {
+            {(episodes.length)?
                 episodes.map((single)=>{
                     return (
                         <div className="episode-card"><p>{animeDetails.animeTitle}-{single.episodeNum}</p><span><a href={single.episodeUrl}>CLICK HERE</a></span></div>
                     )
-                })
+                }): <p className="not-available">Episodes Not Live Yet...</p>
             }
       </div>
     </div>
