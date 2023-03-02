@@ -18,6 +18,7 @@ const Genre = () => {
   };
 
   useEffect(() => {
+    console.log(genreAnime)
     getGenreAnime();
   },[type]);
   return genreAnime.length === 0 ? (

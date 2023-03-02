@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { NAV_LOGO } from "../utils/constants";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { toggleBtn } from "../utils/toggleSlice";
 const Header = () => {
+  const dispatch = useDispatch()
   const [SearchBtnClick, setSearchBtnClick] = useState(false);
   const [searchText, setSearchText] = useState("");
   const favouriteItems = useSelector((store) => store.favourite.favs);
@@ -10,10 +12,15 @@ const Header = () => {
   const handleSearchBar = () => {
     setSearchBtnClick(!SearchBtnClick);
   };
+  const store = useSelector(store => store.toggle.isMenuOpen);
   // const handleInput = (e) =>{
   //   console.log(e.target.value)
   //   setSearchText(e.target.value)
   // }
+  const handleClick = () =>{
+    dispatch(toggleBtn())
+    // console.log(store)
+  }
   return (
     <div className="navbar">
       <div className="left-side-navbar">
@@ -24,8 +31,8 @@ const Header = () => {
           </Link>
           <li>
             <div class="dropdown">
-              <button class="dropbtn">Browse</button>
-              <div class="dropdown-content">
+              <button class="dropbtn" onClick={handleClick}>Browse</button>
+              {(store)?<div class="dropdown-content">
                 <div className="dd-left-side">
                   <Link to="/browse/popular">Popular</Link>
                   <Link to="/browse/new">New</Link>
@@ -45,7 +52,7 @@ const Header = () => {
                   <Link to="/genre/shoujo">Shoujo</Link>
                   <Link to="/genre/sports">Sports</Link>
                 </div>
-              </div>
+              </div>:null}
             </div>
           </li>
           <li>Manga</li>
