@@ -9,7 +9,7 @@ const Search = () => {
   };
   const getSearchDetail = async () => {
     const data = await fetch(
-      "https://gogoanime.consumet.stream/search?keyw=" + searchText
+      "https://webdis-4d5t.onrender.com/search?keyw=" + searchText
     );
     const json = await data.json();
     // console.log(json)
