@@ -8,7 +8,7 @@ const Genre = () => {
   const getGenreAnime = async () => {
     try {
       const data = await fetch(
-        "https://gogoanime.consumet.stream/genre/" + type
+        "https://webdis-4d5t.onrender.com/genre/" + type
       );
       const json = await data.json();
       setGenreAnime(json);
