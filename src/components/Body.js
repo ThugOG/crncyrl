@@ -5,7 +5,7 @@ import Carousel from "./Carousel";
 const Body = () => {
   const [recentRelease, setRecentRelease] = useState([]);
   const getAnimeData = async () => {
-    const data = await fetch("https://gogoanime.consumet.stream/popular");
+    const data = await fetch("https://webdis-4d5t.onrender.com/popular");
     const json = await data?.json();
     // console.log(json)
     setRecentRelease(json);
